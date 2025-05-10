@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "50051:50051"
+    networks:
+      - rentcar-net
+
+  car-service:
+    build: ./car-service
+    container_name: car-service
+    ports:
+      - "50052:50052"
+    networks:
+      - rentcar-net
+
+  api-gateway:
+    build: ./apiGateway
+    container_name: api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - user-service
+      - car-service
+    networks:
+      - rentcar-net
+
+networks:
+  rentcar-net:
+    driver: bridge
