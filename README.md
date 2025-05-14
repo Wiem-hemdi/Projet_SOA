@@ -135,14 +135,6 @@ GET http://localhost:3000/cars
 
 ---
 
-## 🔮 Améliorations futures
-
-- Ajouter une base de données (MongoDB, PostgreSQL, etc.)
-- Ajouter une authentification par token JWT
-- Ajouter des tests unitaires
-- Déployer avec Docker Swarm ou Kubernetes
-- Intégrer un service `reservation-service`
-
 ---
 
 ## 👩‍💻 Auteur
